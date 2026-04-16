@@ -41,7 +41,8 @@ const initialState: State = {
 };
 
 export default function LeadChat() {
-  const { company, logoImage, services } = useBusiness();
+  const { company, services } = useBusiness();
+  const ownerFirst = company.owner.split(" ")[0];
   const [open, setOpen] = useState(false);
   const [state, setState] = useState<State>(initialState);
   const [submitting, setSubmitting] = useState(false);
@@ -123,16 +124,15 @@ export default function LeadChat() {
             exit={{ opacity: 0, y: 12, scale: 0.9 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="fixed bottom-6 right-6 z-50 group"
-            aria-label="Chat with Gabe"
+            aria-label={`Chat with ${company.owner}`}
           >
             <div className="flex items-center gap-3 bg-sky-950 text-sand-50 pl-3 pr-5 py-3 rounded-sm shadow-[0_12px_30px_-10px_rgba(15,31,24,0.55)] border border-sky-800/80 hover:bg-sky-800 transition-colors duration-300">
-              <span className="relative w-9 h-9 rounded-full bg-sand-50 flex items-center justify-center overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={logoImage} alt="" className="w-full h-full object-contain p-1" />
+              <span className="relative w-9 h-9 rounded-full bg-sky-500 flex items-center justify-center overflow-hidden">
+                <span className="font-display font-bold text-sand-50 text-[14px]">{company.owner.charAt(0)}</span>
                 <span className="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 bg-clay-400 rounded-full border-2 border-sky-950" />
               </span>
               <div className="flex flex-col items-start leading-tight">
-                <span className="font-display font-bold uppercase tracking-wider text-[14px]">Chat with Gabe</span>
+                <span className="font-display font-bold uppercase tracking-wider text-[14px]">Chat with {company.owner.split(" ")[0]}</span>
                 <span className="font-body text-[10px] uppercase tracking-[0.2em] text-sand-200/80">
                   Usually replies in 24h
                 </span>
@@ -166,13 +166,12 @@ export default function LeadChat() {
                          bottom-4 right-4 left-4 top-16 max-h-[calc(100dvh-5rem)]
                          lg:inset-auto lg:bottom-6 lg:right-6 lg:top-auto lg:left-auto lg:w-[400px] lg:h-[620px]"
               role="dialog"
-              aria-label="Chat with Gabe"
+              aria-label={`Chat with ${company.owner}`}
             >
               {/* Header */}
               <div className="relative flex items-center gap-3 bg-sky-950 text-sand-50 px-5 py-4 shrink-0">
-                <span className="relative w-11 h-11 rounded-full bg-sand-50 flex items-center justify-center overflow-hidden shrink-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={logoImage} alt="" className="w-full h-full object-contain p-1" />
+                <span className="relative w-11 h-11 rounded-full bg-sky-500 flex items-center justify-center overflow-hidden shrink-0">
+                  <span className="font-display font-bold text-sand-50 text-[16px]">{company.owner.charAt(0)}</span>
                   <span className="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 bg-clay-400 rounded-full border-2 border-sand-50" />
                 </span>
                 <div className="flex flex-col leading-tight flex-1">
@@ -193,13 +192,12 @@ export default function LeadChat() {
               {/* Messages */}
               <div ref={scrollRef} className="flex-1 overflow-y-auto px-5 py-6 space-y-5">
                 {/* Greeting */}
-                <BotBubble>
-                  Hi, Gabe here. Tell me a bit about what you&rsquo;re looking at — I&rsquo;ll
-                  get back to you personally within a day.
+                <BotBubble name={ownerFirst}>
+                  Hey, {company.owner.split(" ")[0]} here from {company.shortName}. Tell me a bit about what you&rsquo;re looking at — I&rsquo;ll get back to you personally within a day.
                 </BotBubble>
 
                 {/* Step 1: service */}
-                <BotBubble delay={0.15}>
+                <BotBubble name={ownerFirst} delay={0.15}>
                   What kind of work is it?
                 </BotBubble>
 
@@ -230,7 +228,7 @@ export default function LeadChat() {
                 {/* Step 2: urgency */}
                 {(state.step === "urgency" || state.step === "contact" || state.step === "done") && (
                   <>
-                    <BotBubble delay={0.15}>
+                    <BotBubble name={ownerFirst} delay={0.15}>
                       Got it — {state.service.toLowerCase()}. When are you hoping to start?
                     </BotBubble>
 
@@ -258,7 +256,7 @@ export default function LeadChat() {
                 {/* Step 3: contact form */}
                 {(state.step === "contact" || state.step === "done") && (
                   <>
-                    <BotBubble delay={0.15}>
+                    <BotBubble name={ownerFirst} delay={0.15}>
                       Perfect. Leave me your name and a good number — I&rsquo;ll call you back.
                     </BotBubble>
 
@@ -301,7 +299,7 @@ export default function LeadChat() {
                             </>
                           ) : (
                             <>
-                              Send to Gabe
+                              Send to {company.owner.split(" ")[0]}
                               <Send className="w-3.5 h-3.5" />
                             </>
                           )}
@@ -319,14 +317,14 @@ export default function LeadChat() {
 
                 {/* Done state */}
                 {state.step === "done" && (
-                  <BotBubble delay={0.3}>
+                  <BotBubble name={ownerFirst} delay={0.3}>
                     <span className="flex items-center gap-2 mb-2 text-clay-600 font-medium">
                       <Check className="w-4 h-4" strokeWidth={2} /> Got it, {firstName}.
                     </span>
                     I&rsquo;ll give you a call back within a day. In the meantime, feel
                     free to ring the shop directly — <a href={`tel:${company.phoneRaw}`} className="text-sky-500 underline underline-offset-2 font-medium">{company.phone}</a>.
                     <br /><br />
-                    <span className="font-bold uppercase tracking-wider">— Gabe</span>
+                    <span className="font-bold uppercase tracking-wider">— {company.owner.split(" ")[0]}</span>
                   </BotBubble>
                 )}
               </div>
@@ -352,7 +350,7 @@ export default function LeadChat() {
                   <span />
                 )}
                 <span className="text-[10px] uppercase tracking-[0.22em] text-slate-400 font-semibold">
-                  {company.city.split(",")[0]} · OR
+                  {company.location}
                 </span>
               </div>
             </motion.div>
@@ -365,7 +363,7 @@ export default function LeadChat() {
 
 /* ---------- sub-components ---------- */
 
-function BotBubble({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function BotBubble({ children, delay = 0, name = "T" }: { children: React.ReactNode; delay?: number; name?: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -374,7 +372,7 @@ function BotBubble({ children, delay = 0 }: { children: React.ReactNode; delay?:
       className="flex items-start gap-2.5"
     >
       <span className="shrink-0 w-7 h-7 rounded-sm bg-sky-500 text-sand-50 flex items-center justify-center font-display font-bold uppercase text-[11px] mt-0.5">
-        G
+        {name.charAt(0)}
       </span>
       <div className="max-w-[85%] bg-slate-900/[0.06] border border-slate-900/10 rounded-sm px-4 py-3 text-[14px] text-slate-800 leading-relaxed">
         {children}

@@ -6,8 +6,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LenisProvider from "@/components/layout/LenisProvider";
 import StickyPhone from "@/components/layout/StickyPhone";
-import BackToTop from "@/components/layout/BackToTop";
 import DynamicTheme from "@/components/layout/DynamicTheme";
+import LeadChat from "@/components/ui/LeadChat";
 
 const data = getAllBusinesses()[0];
 const { company } = data;
@@ -66,7 +66,7 @@ export default function RootLayout({
             <Footer />
           </LenisProvider>
           <StickyPhone />
-          <BackToTop />
+          <LeadChat />
         </BusinessProvider>
       </body>
     </html>
