@@ -1,0 +1,291 @@
+@import "tailwindcss";
+
+/* ============================================================
+   GREENO CONSTRUCTION — Design System v2
+   CONTRACTOR RUGGED — Oswald condensed + sharp edges + gritty
+   Tailwind CSS v4 | @theme inline
+   ============================================================ */
+
+@theme inline {
+  /* --------------------------------------------------
+     COLORS — "sky" = MOSS (dark construction green)
+     -------------------------------------------------- */
+  --color-sky-50:  #EEF1EB;
+  --color-sky-100: #DCE3D8;
+  --color-sky-200: #C1CEBB;
+  --color-sky-300: #9AAE92;
+  --color-sky-400: #6E8A69;
+  --color-sky-500: #2C4A3E;
+  --color-sky-600: #223A31;
+  --color-sky-700: #1A2D26;
+  --color-sky-800: #13211C;
+  --color-sky-900: #0F1F18;
+  --color-sky-950: #0B1612;
+
+  /* --------------------------------------------------
+     COLORS — "sand" = CONCRETE (cool neutral grays)
+     -------------------------------------------------- */
+  --color-sand-50:  #F5F5F3;
+  --color-sand-100: #EAEAE6;
+  --color-sand-200: #DDDDD8;
+  --color-sand-300: #C4C4BC;
+  --color-sand-400: #A0A098;
+  --color-sand-500: #7A7A72;
+  --color-sand-600: #5A5A54;
+
+  /* --------------------------------------------------
+     COLORS — "slate" = INK (neutral dark text)
+     -------------------------------------------------- */
+  --color-slate-50:  #F5F5F5;
+  --color-slate-100: #EBEBEB;
+  --color-slate-200: #DCDCDC;
+  --color-slate-300: #B8B8B8;
+  --color-slate-400: #8A8A8A;
+  --color-slate-500: #5C5C5C;
+  --color-slate-600: #3D3D3D;
+  --color-slate-700: #2A2A2A;
+  --color-slate-800: #1A1A1A;
+  --color-slate-900: #111111;
+  --color-slate-950: #0A0A0A;
+
+  /* --------------------------------------------------
+     COLORS — CLAY → HI-VIS (punchier construction accent)
+     -------------------------------------------------- */
+  --color-clay-50:  #FFF3E0;
+  --color-clay-100: #FFE0B2;
+  --color-clay-200: #FFCC80;
+  --color-clay-300: #FFB74D;
+  --color-clay-400: #FFA726;
+  --color-clay-500: #F57C00;
+  --color-clay-600: #E65100;
+  --color-clay-700: #BF360C;
+
+  /* --------------------------------------------------
+     FONTS — Oswald (display, condensed, industrial)
+             + Inter (body, clean)
+     -------------------------------------------------- */
+  --font-display: "Oswald", Impact, "Arial Narrow", sans-serif;
+  --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* --------------------------------------------------
+     BORDER RADIUS — SHARP. Contractor, not spa.
+     -------------------------------------------------- */
+  --radius-xs:  0px;
+  --radius-sm:  2px;
+  --radius-md:  3px;
+  --radius-lg:  4px;
+  --radius-xl:  6px;
+  --radius-2xl: 8px;
+  --radius-3xl: 10px;
+  --radius-4xl: 12px;
+
+  /* --------------------------------------------------
+     ANIMATIONS
+     -------------------------------------------------- */
+  --animate-ken-burns:       ken-burns 24s ease-in-out infinite alternate;
+  --animate-marquee:         marquee 60s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 60s linear infinite;
+  --animate-fade-up:         fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-count-pulse:     count-pulse 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-float:           float 7s ease-in-out infinite;
+  --animate-shimmer:         shimmer 2.4s linear infinite;
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+
+@keyframes ken-burns {
+  0%   { transform: scale(1)    translate(0, 0); }
+  100% { transform: scale(1.08) translate(-1.2%, -0.8%); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fade-up {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes count-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-sky-500);
+  color: #ffffff;
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-slate-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-400);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-sky-500);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-slate-400) var(--color-slate-100);
+}
+
+/* ============================================================
+   LENIS SMOOTH SCROLL
+   ============================================================ */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ============================================================
+   UTILITY CLASSES — GreenO v2
+   ============================================================ */
+
+.glass-card {
+  background: rgba(245, 245, 245, 0.80);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--color-slate-200);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.gradient-mesh-sky {
+  background-image:
+    radial-gradient(ellipse 65% 55% at 18% 38%, rgba(44, 74, 62, 0.08), transparent),
+    radial-gradient(ellipse 55% 65% at 82% 22%, rgba(0, 0, 0, 0.04), transparent);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1.5px var(--color-slate-400);
+  color: transparent;
+}
+
+.text-stroke-sky {
+  -webkit-text-stroke: 2px var(--color-sky-500);
+  color: transparent;
+}
+
+.geo-line {
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-sky-500) 0%, var(--color-slate-400) 40%, transparent 100%);
+}
+
+.rule-hair {
+  height: 1px;
+  background: var(--color-slate-300);
+}
+
+.noise-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+.img-warm {
+  filter: saturate(0.95) contrast(1.02);
+  transition: filter 0.5s ease;
+}
+
+.img-warm:hover { filter: saturate(1.05) contrast(1.05); }
+
+/* ============================================================
+   ACCESSIBILITY — Reduced Motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
