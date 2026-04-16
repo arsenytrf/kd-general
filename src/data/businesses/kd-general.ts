@@ -50,7 +50,7 @@ export const config: BusinessConfig = {
         "Subcontractor coordination",
         "Final inspections",
       ],
-      image: "",
+      image: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGSSCzB04YsWt8speHGVVsowfqPXQ6_706kTHUSMYz6-oTouMFogiElxOGV-_XuiOuR3D-JgRyVjPbfKPHfFTrZWpBaP1fmFvbwUtiGQkVsvmTcYh4Pyr1QoJnFf01en54-PTMLgw=w1200-h900-k-no",
     },
     {
       title: "Kitchen Remodel",
@@ -65,7 +65,7 @@ export const config: BusinessConfig = {
         "Plumbing relocation",
         "Lighting & electrical upgrades",
       ],
-      image: "",
+      image: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGyUlUeEZRMzAH_5TfWcA7pHAKb8-ZDnJnzNdFaSt43KXtK1iTYksEaRqJkxkNx0i3mavu7SctzVTPF_ZZV8gvOJK4SXXKsa2Sl9JJukygoDu8y1e7SBy4ozFUtAVfB8y2WS0_W=w1200-h900-k-no",
     },
     {
       title: "Bathroom Remodel",
@@ -80,7 +80,7 @@ export const config: BusinessConfig = {
         "Heated flooring",
         "Waterproofing & ventilation",
       ],
-      image: "",
+      image: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE02eMFx7SdNrwmvdaSx2J7Ss0-JyaOr23yt-pWO0w9bdJut0uKEjmFov8-AuwHokFphD6Esd_zNMtPBHeG4grTiQG2cohvjRjTwDGFcCUwmjpUcGkM7hsDuGR9T64HTfVnTkWy=w1200-h900-k-no",
     },
     {
       title: "Basement Remodel",
@@ -95,7 +95,7 @@ export const config: BusinessConfig = {
         "Electrical & plumbing rough-in",
         "Custom built-ins",
       ],
-      image: "",
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&q=80",
     },
     {
       title: "Whole Home Remodel",
@@ -110,7 +110,7 @@ export const config: BusinessConfig = {
         "Systems upgrades (HVAC, electrical, plumbing)",
         "Finish selection & installation",
       ],
-      image: "",
+      image: "https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=800&h=600&fit=crop&q=80",
     },
     {
       title: "Additions",
@@ -125,7 +125,7 @@ export const config: BusinessConfig = {
         "Sunroom & covered patio builds",
         "Foundation & structural work",
       ],
-      image: "",
+      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop&q=80",
     },
     {
       title: "Custom Flooring",
@@ -140,7 +140,7 @@ export const config: BusinessConfig = {
         "Luxury vinyl plank (LVP)",
         "Subfloor prep & leveling",
       ],
-      image: "",
+      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop&q=80",
     },
     {
       title: "Demolition",
@@ -155,7 +155,7 @@ export const config: BusinessConfig = {
         "Hazmat assessment coordination",
         "Site prep for new construction",
       ],
-      image: "",
+      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=600&fit=crop&q=80",
     },
   ],
   reviews: [
@@ -206,6 +206,15 @@ export const config: BusinessConfig = {
     { src: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGSSCzB04YsWt8speHGVVsowfqPXQ6_706kTHUSMYz6-oTouMFogiElxOGV-_XuiOuR3D-JgRyVjPbfKPHfFTrZWpBaP1fmFvbwUtiGQkVsvmTcYh4Pyr1QoJnFf01en54-PTMLgw=w1200-h900-k-no", alt: "Project work", tag: "Exterior" },
     { src: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGyUlUeEZRMzAH_5TfWcA7pHAKb8-ZDnJnzNdFaSt43KXtK1iTYksEaRqJkxkNx0i3mavu7SctzVTPF_ZZV8gvOJK4SXXKsa2Sl9JJukygoDu8y1e7SBy4ozFUtAVfB8y2WS0_W=w1200-h900-k-no", alt: "Project work", tag: "Construction" },
     { src: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE02eMFx7SdNrwmvdaSx2J7Ss0-JyaOr23yt-pWO0w9bdJut0uKEjmFov8-AuwHokFphD6Esd_zNMtPBHeG4grTiQG2cohvjRjTwDGFcCUwmjpUcGkM7hsDuGR9T64HTfVnTkWy=w1200-h900-k-no", alt: "Project work", tag: "Residential" },
+    { src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&q=80", alt: "Project work", tag: "Remodel" },
+    { src: "https://images.unsplash.com/photo-1541123603104-512919d6a96c?w=800&h=600&fit=crop&q=80", alt: "Project work", tag: "Interior" },
+    { src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop&q=80", alt: "Project work", tag: "Framing" },
+    { src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop&q=80", alt: "Project work", tag: "Roofing" },
+    { src: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=600&fit=crop&q=80", alt: "Project work", tag: "Exterior" },
+    { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&q=80", alt: "Project work", tag: "Remodel" },
+    { src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&q=80", alt: "Project work", tag: "Interior" },
+    { src: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=800&h=600&fit=crop&q=80", alt: "Project work", tag: "Roofing" },
+    { src: "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&h=600&fit=crop&q=80", alt: "Project work", tag: "Construction" },
   ],
   heroImage: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGSSCzB04YsWt8speHGVVsowfqPXQ6_706kTHUSMYz6-oTouMFogiElxOGV-_XuiOuR3D-JgRyVjPbfKPHfFTrZWpBaP1fmFvbwUtiGQkVsvmTcYh4Pyr1QoJnFf01en54-PTMLgw=w1600-h1200-k-no",
   logoImage: "",
