@@ -1,7 +1,7 @@
 import type { BusinessConfig } from "@/types";
 
-const u = (id: string, w = 800, h = 600) =>
-  `https://lh3.googleusercontent.com/gps-cs-s/APNQkAGSSCzB04YsWt8speHGVVsowfqPXQ6_706kTHUSMYz6-oTouMFogiElxOGV-_XuiOuR3D-JgRyVjPbfKPHfFTrZWpBaP1fmFvbwUtiGQkVsvmTcYh4Pyr1QoJnFf01en54-PTMLgw=w800-h600-k-no"kd-general",
+export const config: BusinessConfig = {
+  slug: "kd-general",
   company: {
     name: "KD General Construction LLC",
     shortName: "KD General",
@@ -50,7 +50,7 @@ const u = (id: string, w = 800, h = 600) =>
         "Subcontractor coordination",
         "Final inspections",
       ],
-      image: u("photo-1504307651254-35680f356dfd"),
+      image: "",
     },
     {
       title: "Kitchen Remodel",
@@ -65,7 +65,7 @@ const u = (id: string, w = 800, h = 600) =>
         "Plumbing relocation",
         "Lighting & electrical upgrades",
       ],
-      image: u("photo-1600596542815-ffad4c1539a9"),
+      image: "",
     },
     {
       title: "Bathroom Remodel",
@@ -80,7 +80,7 @@ const u = (id: string, w = 800, h = 600) =>
         "Heated flooring",
         "Waterproofing & ventilation",
       ],
-      image: u("photo-1600573472592-401b489a3cdc"),
+      image: "",
     },
     {
       title: "Basement Remodel",
@@ -95,7 +95,7 @@ const u = (id: string, w = 800, h = 600) =>
         "Electrical & plumbing rough-in",
         "Custom built-ins",
       ],
-      image: u("photo-1632923057155-1c05a7cf3bb4"),
+      image: "",
     },
     {
       title: "Whole Home Remodel",
@@ -110,7 +110,7 @@ const u = (id: string, w = 800, h = 600) =>
         "Systems upgrades (HVAC, electrical, plumbing)",
         "Finish selection & installation",
       ],
-      image: u("photo-1560518883-ce09059eeffa"),
+      image: "",
     },
     {
       title: "Additions",
@@ -125,7 +125,7 @@ const u = (id: string, w = 800, h = 600) =>
         "Sunroom & covered patio builds",
         "Foundation & structural work",
       ],
-      image: u("photo-1541123603104-512919d6a96c"),
+      image: "",
     },
     {
       title: "Custom Flooring",
@@ -140,7 +140,7 @@ const u = (id: string, w = 800, h = 600) =>
         "Luxury vinyl plank (LVP)",
         "Subfloor prep & leveling",
       ],
-      image: u("photo-1600585154340-be6161a56a0c"),
+      image: "",
     },
     {
       title: "Demolition",
@@ -155,7 +155,7 @@ const u = (id: string, w = 800, h = 600) =>
         "Hazmat assessment coordination",
         "Site prep for new construction",
       ],
-      image: u("photo-1581094794329-c8112a89af12"),
+      image: "",
     },
   ],
   reviews: [
@@ -207,7 +207,7 @@ const u = (id: string, w = 800, h = 600) =>
     { src: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGyUlUeEZRMzAH_5TfWcA7pHAKb8-ZDnJnzNdFaSt43KXtK1iTYksEaRqJkxkNx0i3mavu7SctzVTPF_ZZV8gvOJK4SXXKsa2Sl9JJukygoDu8y1e7SBy4ozFUtAVfB8y2WS0_W=w1200-h900-k-no", alt: "Project work", tag: "Construction" },
     { src: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE02eMFx7SdNrwmvdaSx2J7Ss0-JyaOr23yt-pWO0w9bdJut0uKEjmFov8-AuwHokFphD6Esd_zNMtPBHeG4grTiQG2cohvjRjTwDGFcCUwmjpUcGkM7hsDuGR9T64HTfVnTkWy=w1200-h900-k-no", alt: "Project work", tag: "Residential" },
   ],
-  heroImage: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGSSCzB04YsWt8speHGVVsowfqPXQ6_706kTHUSMYz6-oTouMFogiElxOGV-_XuiOuR3D-JgRyVjPbfKPHfFTrZWpBaP1fmFvbwUtiGQkVsvmTcYh4Pyr1QoJnFf01en54-PTMLgw=w1600-h1200-k-no", 1600, 900),
+  heroImage: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGSSCzB04YsWt8speHGVVsowfqPXQ6_706kTHUSMYz6-oTouMFogiElxOGV-_XuiOuR3D-JgRyVjPbfKPHfFTrZWpBaP1fmFvbwUtiGQkVsvmTcYh4Pyr1QoJnFf01en54-PTMLgw=w1600-h1200-k-no",
   logoImage: "",
   theme: {
     category: "contractor",
